@@ -1,69 +1,76 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Sparkles, Code } from "lucide-react";
+import Link from "next/link";
+import { FadeIn, ScaleIn } from "@/components/animations/motion-container";
 
-export default function Home() {
+export default function Page() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <main className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950 text-slate-50 px-4 sm:px-6 lg:px-8">
+      {/* Background Glowing Orbs using FadeIn */}
+      <FadeIn
+        delay={0.1}
+        className="absolute inset-0 -z-10 flex items-center justify-center"
+      >
+        <div className="w-[350px] h-[350px] sm:w-[600px] sm:h-[600px] bg-indigo-600/15 blur-[140px] rounded-full" />
+      </FadeIn>
+
+      <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
+        {/* Badge */}
+        <FadeIn delay={0.15}>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-950/80 border border-indigo-800/60 text-indigo-300 text-xs sm:text-sm font-medium shadow-inner">
+            <Sparkles className="w-4 h-4 text-indigo-400" />
+            <span>Weekly Project: Animated Hero Section</span>
+          </div>
+        </FadeIn>
+
+        {/* Main Heading */}
+        <FadeIn delay={0.25}>
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1]">
+            Crafting Digital <br className="hidden sm:inline" />
+            <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-pink-400 bg-clip-text text-transparent">
+              Masterpieces in Motion.
+            </span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+        </FadeIn>
+
+        {/* Subheading */}
+        <FadeIn delay={0.35}>
+          <p className="max-w-2xl mx-auto text-base sm:text-lg lg:text-xl text-slate-400 font-normal leading-relaxed">
+            A high-performance, fully responsive hero section built with Next.js
+            App Router, Tailwind CSS, and reusable modular animation wrappers.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+        </FadeIn>
+
+        {/* CTA Buttons with Scale/Hover effect */}
+        <FadeIn delay={0.45}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <ScaleIn delay={0.5} className="w-full sm:w-auto">
+              <Button
+                asChild
+                size="lg"
+                className="w-full sm:w-auto gap-2 text-base font-semibold bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30 transition-transform hover:scale-105 active:scale-95"
+              >
+                <Link href="#explore">
+                  Explore Work <ArrowRight className="w-4 h-4" />
+                </Link>
+              </Button>
+            </ScaleIn>
+
+            <ScaleIn delay={0.55} className="w-full sm:w-auto">
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="w-full sm:w-auto gap-2 text-base font-semibold border-slate-800 bg-slate-900/50 hover:bg-slate-800 text-slate-200 transition-transform hover:scale-105 active:scale-95"
+              >
+                <Link href="https://github.com" target="_blank">
+                  <Code className="w-4 h-4" /> GitHub Repo
+                </Link>
+              </Button>
+            </ScaleIn>
+          </div>
+        </FadeIn>
+      </div>
+    </main>
   );
 }

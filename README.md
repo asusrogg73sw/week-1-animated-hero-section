@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Animated Hero Section
 
-## Getting Started
+A high-performance, fully responsive, and accessible Hero Section built with Next.js App Router, Tailwind CSS, shadcn/ui, and Framer Motion. 
 
-First, run the development server:
+This project was built as a weekly milestone to master modern frontend animation orchestration, component modularity, and accessibility standards.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Responsive Design:** Optimized for all screen sizes ranging from mobile devices (375px) to large desktop monitors.
+- **Staggered Text & Element Reveal:** Smooth entry animations for badges, headings, subheadings, and CTAs using custom reusable motion containers[cite: 1].
+- **Interactive Gestures:** Fluid button hover and tap scaling effects (`whileHover`, `whileTap`) for rich user feedback[cite: 1].
+- **Accessibility (`prefers-reduced-motion`):** Automatically respects user system preferences to reduce or disable animations for users prone to motion sensitivity[cite: 1].
+- **Server/Client Architecture:** Clean separation where the root page acts as a Server Component while animations are isolated inside modular client-side wrapper components.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework:** [Next.js](https://nextjs.org/) (App Router)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components:** [shadcn/ui](https://ui.shadcn.com/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/) (`motion/react`)
+- **Icons:** [Lucide React](https://lucide.dev/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📂 Project Structure
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+animated-hero-section/
+├── app/
+│   ├── layout.tsx
+│   ├── globals.css
+│   └── page.tsx              # Pure Server Component (Main Hero View)
+├── components/
+│   ├── animations/
+│   │   └── motion-container.tsx # Client-side reusable FadeIn & ScaleIn wrappers
+│   └── ui/
+│       └── button.tsx        # shadcn/ui button component
+├── package.json
+└── README.md
