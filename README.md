@@ -49,8 +49,6 @@ const item = {
 </motion.div>
 ```
 
-If a child also sets `transition={{ delay: 1 }}`, that delay is **added** to the stagger offset (`1 + index * 0.15`). The sequence does not stop; that item just starts later.
-
 ---
 
 ## Project structure
