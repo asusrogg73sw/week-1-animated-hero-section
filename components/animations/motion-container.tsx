@@ -49,3 +49,23 @@ export const ScaleIn = ({
     </motion.div>
   );
 };
+
+export const HoverTap = ({
+  children,
+  className = "",
+}: {
+  children?: React.ReactNode;
+  className?: string;
+}) => {
+  const shouldReduce = useReducedMotion();
+
+  return (
+    <motion.div
+      whileHover={shouldReduce ? undefined : { scale: 1.05 }}
+      whileTap={shouldReduce ? undefined : { scale: 0.95 }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+};
